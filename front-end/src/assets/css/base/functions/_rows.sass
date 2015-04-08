@@ -1,0 +1,10 @@
+@function rows($count, $take-bottom: false)
+  $row: (($dimensions--height - $dimensions--gutter) / $dimensions--rows)
+  $gutter: $dimensions--gutter / $dimensions--height;
+
+  $height: $count * $row
+
+  @if ($take-bottom)
+    $height: $height + $dimensions--gutter
+
+  @return $height

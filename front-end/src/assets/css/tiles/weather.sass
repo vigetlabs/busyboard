@@ -1,0 +1,95 @@
+.weather
+  height: rows(4)
+  line-height: 1.3
+  top: rows(4)
+  position: absolute
+  width: cols(2)
+
+  ul
+    margin: 0
+    padding: 0
+
+  li
+    list-style-type: none
+    margin: 0
+    position: absolute
+
+  h2
+    font-size: 18px
+    letter-spacing: 3px
+    text-transform: uppercase
+
+  h2,
+  p
+    text-align: center
+
+  p
+    font-weight: bold
+
+.weather__currently
+  background: $color--siren
+  height: 60%
+  left: 0
+  width: 100%
+
+  h2
+    color: $color--brick-red
+    padding-top: 45px
+
+  p
+    bottom: 0
+    color: $color--tamarind
+    font-size: 160px
+    left: 0
+    padding-bottom: 5px
+    position: absolute
+    right: 0
+
+  canvas
+    +center(horizontal)
+    top: 85px
+
+  &:after
+    box-shadow: inset 0 -10px 15px 10px $color--siren
+    +center(horizontal)
+    content: ''
+    display: block
+    height: 220px
+    top: 85px
+    width: 220px
+
+.weather__later,
+.weather__much-later
+  background: $color--brick-red
+  color: $color--siren
+  bottom: 0
+  height: 40%
+  width: 50%
+
+  h2
+    color: $color--coral
+    padding: 45px 25px
+
+  p
+    bottom: 55px
+    color: $color--siren
+    font-size: 60px
+    left: 0
+    position: absolute
+    right: 0
+
+  canvas
+    +center(horizontal)
+    top: 110px
+
+  &:after
+    box-shadow: inset 0 -5px 10px 5px $color--brick-red
+    +center(horizontal)
+    content: ''
+    display: block
+    height: 90px
+    top: 110px
+    width: 90px
+
+.weather__much-later
+  left: 50%

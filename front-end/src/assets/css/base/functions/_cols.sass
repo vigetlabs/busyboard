@@ -1,0 +1,10 @@
+@function cols($count, $take-right: false)
+  $col: (($dimensions--width - $dimensions--gutter) / $dimensions--cols)
+  $gutter: $dimensions--gutter / $dimensions--height;
+
+  $width: $count * $col
+
+  @if ($take-right)
+    $width: $width + $dimensions--gutter
+
+  @return $width

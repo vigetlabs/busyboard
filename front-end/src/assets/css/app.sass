@@ -1,0 +1,44 @@
+@import 'base/index'
+@import 'fonts'
+
+html,
+body
+  height: 100%
+  width: 100%
+
+html
+  box-sizing: border-box
+
+body
+
+#content
+  background: url('../images/background.jpg')
+  background-size: cover
+
+*,
+*:before,
+*:after
+  color: inherit
+  box-sizing: inherit
+  font-weight: inherit
+  margin: 0
+  padding: 0
+  text-decoration: none
+
+body
+  margin: 0
+
+main
+  background: $color--mulberry-road
+  box-shadow: 0 0 250px $color--tamarind
+  font-family: Nexa
+  height: 1920px
+  letter-spacing: 0.1em
+  margin: 0 auto
+  position: relative
+  width: 1080px
+
+@import 'tiles/event'
+@import 'tiles/weather'
+@import 'tiles/logo'
+@import 'tiles/locations'

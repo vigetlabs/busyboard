@@ -1,0 +1,15 @@
+=center($direction)
+  position: absolute
+
+  @if ($direction == horizontal)
+    left: 50%
+    transform: translate(-50%, 0)
+
+  @if ($direction == vertical)
+    top: 50%
+    transform: translate(0, -50%)
+
+  @if ($direction == both)
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
