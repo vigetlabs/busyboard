@@ -1,33 +1,37 @@
 require('../css/app')
 
-var React     = require('react')
-var $         = require('jquery')
-var Logo      = require('./tiles/logo')
-var Weather   = require('./tiles/weather')
-var Event     = require('./tiles/event')
-var Locations = require('./tiles/locations')
+import React      from 'react'
+import flux       from './flux'
+import fluxMixins from './flux/mixins'
+import poll       from './poll'
 
+import Logo       from './tiles/logo'
+import Weather    from './tiles/weather'
+import Event      from './tiles/event'
+import Locations  from './tiles/locations'
 
-var App = React.createClass({
+poll()
+
+const App = React.createClass({
+  mixins: fluxMixins,
+
+  getStateFromFlux() {
+    const flux = this.getFlux()
+    return flux.store('MainStore').getState()
+  },
 
   render: function() {
     return (
       <main>
         <Logo />
-        <Event />
+        <Event {...this.state.event} />
         <Locations />
-        <Weather />
+        <Weather {...this.state.weather} />
       </main>
     )
   }
 })
 
-
-module.exports = App;
-
-window.onload = function() {
-  React.render(
-    <App />,
-    document.getElementById('content')
-  )
-}
+React.withContext({flux: flux}, () => {
+  React.render(<App />, document.getElementById('content'))
+})

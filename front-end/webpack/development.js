@@ -27,11 +27,11 @@ export default function() {
   config.module.loaders.unshift({
     exclude : /node_modules/,
     test    : /\.js?$/,
-    loader  : 'react-hot!source-map!babel'
+    loader  : 'react-hot!babel?stage=1&loose'
   })
 
   config.debug   = true
-  config.devtool = 'inline-source-map'
+  config.devtool = '#eval-source-map'
 
   return config
 }
