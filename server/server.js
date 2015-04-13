@@ -6,6 +6,8 @@ server.connection({
   port: 8000
 })
 
-require('../front-end/server')
+if (process.env.NODE_ENV === 'development') {
+  require('../front-end/server')
+}
 
 export default server

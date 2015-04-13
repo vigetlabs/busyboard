@@ -5,5 +5,9 @@ export default {
 
   updateEvent(event) {
     this.dispatch('UPDATE_EVENT', event)
+  },
+
+  updateBuses(event) {
+    this.dispatch('UPDATE_BUSES', event)
   }
 }

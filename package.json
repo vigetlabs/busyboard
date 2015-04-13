@@ -10,31 +10,33 @@
     "dev": "NODE_ENV=development node server/index.js"
   },
   "dependencies": {
-    "babel": "^5.0.9",
-    "handlebars": "^3.0.1",
-    "hapi": "^8.4.0",
-    "htmlstrip-native": "^0.1.1",
-    "moment": "^2.10.2",
-    "sync-request": "^2.0.1",
-    "truncate": "^1.0.4"
-  },
-  "devDependencies": {
     "autoprefixer-loader": "^1.2.0",
+    "babel": "^5.0.9",
     "babel-core": "^5.0.11",
     "babel-loader": "^5.0.0",
+    "cheerio": "^0.19.0",
     "clone": "^1.0.2",
     "css-loader": "^0.9.1",
     "file-loader": "^0.8.1",
     "fluxxor": "^1.5.3",
+    "handlebars": "^3.0.1",
+    "hapi": "^8.4.0",
+    "htmlstrip-native": "^0.1.1",
     "jsx-loader": "^0.13.1",
-    "my-local-ip": "^1.0.0",
+    "moment": "^2.10.2",
     "react": "^0.13.1",
-    "react-hot-loader": "^1.2.4",
     "sass-loader": "^1.0.1",
     "simple-ajax": "^2.1.0",
     "style-loader": "^0.9.0",
+    "sync-request": "^2.0.1",
+    "truncate": "^1.0.4",
+    "underscore": "^1.8.3",
     "url-loader": "^0.5.5",
-    "webpack": "^1.8.0",
-    "webpack-dev-server": "^1.8.0"
+    "webpack": "^1.8.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^1.8.0",
+    "my-local-ip": "^1.0.0",
+    "react-hot-loader": "^1.2.4"
   }
 }

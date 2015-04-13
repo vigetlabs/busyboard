@@ -4,11 +4,11 @@ import htmlstrip from 'htmlstrip-native'
 import truncate  from 'truncate'
 
 const get = function() {
-  var event = {}
+  var url      = 'http://api.meetup.com/2/open_events.json/?zip=80302&text=viget&key=285414741962543a2e4c2436165e3d1a'
 
-  var url = 'http://api.meetup.com/2/open_events.json/?zip=80302&text=viget&key=285414741962543a2e4c2436165e3d1a'
+  var event    = {}
   var response = request('GET', url)
-  var data = JSON.parse(response.body)
+  var data     = JSON.parse(response.body)
 
   if (data.results[0]) {
     event.atViget     = true

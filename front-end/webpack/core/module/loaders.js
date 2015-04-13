@@ -4,7 +4,7 @@ export default [
   {
     exclude: /node_modules/,
     test: /\.js?$/,
-    loader: 'babel'
+    loader: 'babel?stage=1&loose'
   },
   {
     test: /\.(png|jpg)$/,
