@@ -1,10 +1,4 @@
-/**
- * @jsx React.DOM
- */
-
-var React = require('react')
-
-module.exports = React.createClass({
+export default React.createClass({
 
   getInitialState() {
     return {

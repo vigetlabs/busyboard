@@ -1,11 +1,11 @@
 require('../css/app')
 
-import React      from 'react'
 import flux       from './flux'
 import fluxMixins from './flux/mixins'
 import poll       from './poll'
 
 import Logo       from './tiles/logo'
+import Buses      from './tiles/buses'
 import Weather    from './tiles/weather'
 import Event      from './tiles/event'
 import Locations  from './tiles/locations'
@@ -24,6 +24,7 @@ const App = React.createClass({
     return (
       <main>
         <Logo />
+        <Buses buses={this.state.buses} />
         <Event {...this.state.event} />
         <Locations />
         <Weather {...this.state.weather} />

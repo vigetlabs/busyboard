@@ -1,6 +1,4 @@
-var React = require('react');
-
-module.exports = React.createClass({
+export default React.createClass({
   render() {
     return (
       <h1 className='logo'>

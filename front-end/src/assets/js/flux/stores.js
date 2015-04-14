@@ -21,7 +21,8 @@ const MainStore = Fluxxor.createStore({
 
     this.bindActions(
       'UPDATE_WEATHER', this.onUpdateWeather,
-      'UPDATE_EVENT',   this.onUpdateEvent
+      'UPDATE_EVENT',   this.onUpdateEvent,
+      'UPDATE_BUSES',   this.onUpdateBuses
     )
   },
 
@@ -35,10 +36,16 @@ const MainStore = Fluxxor.createStore({
     this.emit('change')
   },
 
+  onUpdateBuses(payload) {
+    this.buses = payload
+    this.emit('change')
+  },
+
   getState() {
     return {
       event   : this.event,
-      weather : this.weather
+      weather : this.weather,
+      buses   : this.buses
     }
   }
 })

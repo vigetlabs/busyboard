@@ -1,7 +1,6 @@
-import React       from 'react'
 import WeatherIcon from './weatherIcon.js'
 
-module.exports = React.createClass({
+export default React.createClass({
   render() {
     return (
       <div className='weather'>

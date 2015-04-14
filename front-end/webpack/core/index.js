@@ -4,5 +4,5 @@ export default {
   output  : require('./output'),
   resolve : require('./resolve'),
   node    : require('./node'),
-  plugins : []
+  plugins : require('./plugins')
 }

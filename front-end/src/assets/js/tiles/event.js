@@ -1,6 +1,4 @@
-import React from 'react'
-
-module.exports = React.createClass({
+export default React.createClass({
   render() {
     var location = this.props.atViget
        ? 'Next Meetup Here @ Viget'

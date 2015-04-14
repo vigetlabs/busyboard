@@ -2,6 +2,7 @@ import request from 'sync-request'
 import cheerio from 'cheerio'
 import moment  from 'moment'
 import _       from 'underscore'
+import hash    from 'object-hash'
 
 const get = function() {
   var buses   = []
@@ -9,11 +10,11 @@ const get = function() {
   const urls  = []
   const stops = [
     33236,
-    // 10097,
-    // 24591,
-    // 19825,
-    // 19826,
-    // 10252
+    10097,
+    24591,
+    19825,
+    19826,
+    10252
   ]
 
   const pnrs = [
@@ -43,12 +44,16 @@ const get = function() {
         $tr.find('td:nth-child(5)').text().trim()
       ]
       stopTimes.forEach((time) => {
-        buses.push({
+        const bus = {
           stop        : stop,
           route       : route,
           destination : destination,
-          time        : moment(time, 'h:mma')
-        })
+          datetime    : moment(time, 'h:mma').format('YYYY-MM-DD HH:mm')
+        }
+        bus.hash    = hash(bus)
+        bus.time    = moment(time, 'h:mma')
+        bus.fromNow = bus.time.fromNow(true)
+        buses.push(bus)
       })
     })
   })

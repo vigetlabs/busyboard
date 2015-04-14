@@ -7,7 +7,7 @@
     "url": "git@github.com:averyvery/busyboard.git"
   },
   "scripts": {
-    "dev": "NODE_ENV=development node server/index.js"
+    "dev": "NODE_ENV=development forever -w server/index.js "
   },
   "dependencies": {
     "autoprefixer-loader": "^1.2.0",
@@ -19,11 +19,13 @@
     "css-loader": "^0.9.1",
     "file-loader": "^0.8.1",
     "fluxxor": "^1.5.3",
+    "forever": "^0.14.1",
     "handlebars": "^3.0.1",
     "hapi": "^8.4.0",
     "htmlstrip-native": "^0.1.1",
     "jsx-loader": "^0.13.1",
     "moment": "^2.10.2",
+    "object-hash": "^0.5.0",
     "react": "^0.13.1",
     "sass-loader": "^1.0.1",
     "simple-ajax": "^2.1.0",
