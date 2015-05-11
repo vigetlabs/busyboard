@@ -27,7 +27,7 @@ const get = function() {
       event.name        = data.results[0].name
       event.date        = moment(data.results[0].time).format('MMMM. D')
       event.time        = moment(data.results[0].time).format('h:mmA')
-      event.description = truncate(htmlstrip.html_strip(data.results[0].description), 200)
+      event.description = truncate(html_strip.html_strip(data.results[0].description), 200)
     }
   }
 

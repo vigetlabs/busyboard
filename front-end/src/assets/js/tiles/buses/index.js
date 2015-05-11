@@ -3,6 +3,7 @@ import Bus from './Bus'
 export default React.createClass({
   _getBuses() {
     console.log(this.props.buses)
+
     if (this.props.buses) {
       return this.props.buses.map((bus, i) => {
         return <Bus key={bus.hash}
