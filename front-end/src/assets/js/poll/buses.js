@@ -2,8 +2,10 @@ import Ajax        from 'simple-ajax'
 import { actions } from '../flux'
 
 export default () => {
+  const mock = window.location.search.indexOf('mock') >= 0
+
   const ajax = new Ajax({
-    url         : '/buses',
+    url         : '/buses' + (mock ? '?mock=true' : ''),
     contentType : 'JSON'
   })
   ajax.on('complete', () => {

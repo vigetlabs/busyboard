@@ -1,7 +1,17 @@
-@import 'variables/colors'
-@import 'variables/dimensions'
+@import 'variables/index'
+@import 'functions/index'
+@import 'mixins/index'
+@import 'resets/index'
 
-@import 'functions/cols'
-@import 'functions/rows'
+body
+  margin: 0
 
-@import 'mixins/center'
+main
+  background: $color--mulberry-road
+  box-shadow: 0 0 250px $color--tamarind
+  font-family: Nexa
+  height: 1920px
+  letter-spacing: 0.1em
+  margin: 0 auto
+  position: relative
+  width: 1080px

@@ -1,12 +1,23 @@
-import Bus from './Bus'
+import Bus                   from './Bus'
+import Dot                   from './Dot'
+import TimeoutTransitionGroup from '../../vendor/timeout-transition-group'
 
 export default React.createClass({
   _getBuses() {
-    console.log(this.props.buses)
-
     if (this.props.buses) {
       return this.props.buses.map((bus, i) => {
-        return <Bus key={bus.hash}
+        return <Bus key={bus.hash + 'bus'}
+                    nth={i}
+                    isNext={i === 0}
+                    {...bus} />
+      })
+    }
+  },
+
+  _getDots() {
+    if (this.props.buses) {
+      return this.props.buses.map((bus, i) => {
+        return <Dot key={bus.hash + 'dot'}
                     isNext={i === 0}
                     {...bus} />
       })
@@ -15,14 +26,24 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="bus">
+      <div className="buses">
         <h2>
           That your bus?
         </h2>
-        <ul className="bus__list">
-          {this._getBuses()}
+        <ul className="buses__list">
+          <TimeoutTransitionGroup enterTimeout={5000}
+                                  leaveTimeout={5000}
+                                  transitionName=''>
+            {this._getBuses()}
+          </TimeoutTransitionGroup>
         </ul>
-        <ul className="bus__map"></ul>
+        <ul className="buses__map">
+          <TimeoutTransitionGroup enterTimeout={5000}
+                                  leaveTimeout={5000}
+                                  transitionName=''>
+            {this._getDots()}
+          </TimeoutTransitionGroup>
+        </ul>
       </div>
     )
   }

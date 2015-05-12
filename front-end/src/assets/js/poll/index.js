@@ -2,7 +2,7 @@ import getWeather from './weather'
 import getEvent   from './event'
 import getBuses   from './buses'
 
-const minutes = (n) => n * 60 * 60 * 1000
+const minutes = (n) => n * 60 * 1000
 
 export default () => {
   getWeather()
@@ -12,5 +12,5 @@ export default () => {
   setInterval(getEvent, minutes(1))
 
   getBuses()
-  setInterval(getBuses, minutes(5))
+  setInterval(getBuses, minutes(0.1))
 }
