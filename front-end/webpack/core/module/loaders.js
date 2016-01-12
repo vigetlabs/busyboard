@@ -9,5 +9,17 @@ export default [
   {
     test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
     loader: "file?name=fonts/[hash].[ext]&mimetype=application/font-woff"
+  },
+  {
+    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+    loader: "raw"
+  },
+  {
+    test: /\.jpg(\?v=\d+\.\d+\.\d+)?$/,
+    loader: "file?name=images/[hash].[ext]"
+  },
+  {
+    test: /\.sass$/,
+    loader: 'style-loader!css!autoprefixer!sass?indentedSyntax&imagePath=/assets/images'
   }
 ]

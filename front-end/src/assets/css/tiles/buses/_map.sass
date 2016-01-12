@@ -1,0 +1,139 @@
+.buses__map
+  +fill
+  z-index: 2
+
+  &:after
+    background: linear-gradient(75deg, $color--mulberry-road 20%,rgba($color--mulberry-road, 0) 65%, rgba($color--mulberry-road, 0) 100%)
+    content: ''
+    +fill
+
+  li
+    background: $color--brick-red
+    border-radius: 50%
+    height: 20px
+    left: -25px
+    position: absolute
+    top: -25px
+    width: 20px
+    z-index: 1
+
+    &.-here
+      background: none
+      height: 50px
+      left: 55%
+      top: 44%
+      width: 35px
+
+      path
+        fill: $color--brick-red
+        +fill
+
+    &.-next
+      background: $color--peach-orange
+      z-index: 2
+
+    &.-enter
+      display: none
+
+    &.-enter-active
+      display: block
+
+    &[data-stop='Boulder Transit Center'],
+    &[data-stop='Downtown Boulder Station']
+      +transit-center
+
+      &.-enter-active
+        animation: transit-center-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: transit-center-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate A']
+      +gate-a
+
+      &.-enter-active
+        animation: gate-a-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-a-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate B']
+      +gate-b
+
+      &.-enter-active
+        animation: gate-b-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-b-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate C']
+      +gate-c
+
+      &.-enter-active
+        animation: gate-c-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-c-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate D']
+      +gate-d
+
+      &.-enter-active
+        animation: gate-d-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-d-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate E']
+      +gate-e
+
+      &.-enter-active
+        animation: gate-e-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-e-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate F']
+      +gate-f
+
+      &.-enter-active
+        animation: gate-f-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-f-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate G']
+      +gate-g
+
+      &.-enter-active
+        animation: gate-g-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-g-leave 1 forwards 5s
+
+    &[data-stop='14th & Walnut Gate H']
+      +gate-h
+
+      &.-enter-active
+        animation: gate-h-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-h-leave 1 forwards 5s
+
+    &[data-stop='Walnut St & 14th St Gate J']
+      +gate-j
+
+      &.-enter-active
+        animation: gate-j-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: gate-j-leave 1 forwards 5s
+
+    &[data-stop='15th St & Canyon Blvd']
+      +canyon-and-15th
+
+      &.-enter-active
+        animation: canyon-and-15th-enter 1 forwards 5s
+
+      &.-leave-active
+        animation: canyon-and-15th-leave 1 forwards 5s

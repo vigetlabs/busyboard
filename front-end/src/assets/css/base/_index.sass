@@ -14,4 +14,15 @@ main
   letter-spacing: 0.1em
   margin: 0 auto
   position: relative
+  +tracking(25)
   width: 1080px
+
+#content
+  background: url(../images/background.jpg) 50% 50% no-repeat
+  background-size: cover
+
+@media (width: 1920px) and (height: 1080px)
+  main
+    +smooth
+    transform-origin: 50% 50%
+    transform: translateY(-420px) rotate(-90deg)

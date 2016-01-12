@@ -1,0 +1,73 @@
+.buses__background
+  transform: rotate(-15deg)
+  position: relative
+  height: 940px
+  width: 100%
+
+  span
+    bottom: 0
+    color: $color--siren
+    display: block
+    font-size: 24px
+    font-weight: bold
+    left: 0
+    position: absolute
+    padding: 10px
+    text-transform: uppercase
+    +tracking(100)
+
+  li
+    display: block
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+
+    &:after
+      background: $color--tamarind
+      content: ''
+      display: block
+      height: 12px
+      left: 0
+      position: absolute
+      top: 100%
+      transform: translate(-33.333%)
+      width: 300%
+
+    &.-walnut
+      top: percentage(195px / rows(4))
+
+      span
+        left: 67%
+
+    &.-alley
+      right: percentage(370px / cols(6, true))
+      top: percentage(390px / rows(4))
+
+      &:after
+        transform: none
+        width: 100%
+
+    &.-canyon
+      top: percentage(590px / rows(4))
+
+      span
+        left: 67%
+
+    &.-fourteenth
+      right: -1 * percentage(180px / cols(6, true))
+      top: percentage(515px / rows(4))
+      transform: rotate(90deg)
+
+      span
+        left: 18.5%
+
+    &.-transit-center
+      right: -6.3%
+      top: 48%
+      transform: rotate(90deg)
+      width: 440px
+
+      &:after
+        transform: none
+        width: 100%

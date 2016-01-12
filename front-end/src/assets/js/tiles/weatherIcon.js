@@ -1,6 +1,12 @@
 require('../vendor/skycons')
 
 export default React.createClass({
+  getDefaultProps() {
+    return {
+      icon: 'clear-day'
+    }
+  },
+
   _updateIcon() {
     var icon = this.props.icon.toUpperCase().replace(/-/g, '_')
     var skycon = new window.Skycons({color: this.props.color})

@@ -17,12 +17,21 @@ const MainStore = Fluxxor.createStore({
       laterIcon     : 'clear-day',
       muchLater     : 0,
       muchLaterIcon : 'clear-day'
-    }
+    },
+
+    this.location = {
+      name                : '',
+      closingTime         : '',
+      directionsLength    : '',
+      directionsDirection : '',
+      directionsArrow     : ''
+    },
 
     this.bindActions(
-      'UPDATE_WEATHER', this.onUpdateWeather,
-      'UPDATE_EVENT',   this.onUpdateEvent,
-      'UPDATE_BUSES',   this.onUpdateBuses
+      'UPDATE_WEATHER',  this.onUpdateWeather,
+      'UPDATE_EVENT',    this.onUpdateEvent,
+      'UPDATE_BUSES',    this.onUpdateBuses,
+      'UPDATE_LOCATION', this.onUpdateLocation
     )
   },
 
@@ -41,11 +50,17 @@ const MainStore = Fluxxor.createStore({
     this.emit('change')
   },
 
+  onUpdateLocation(payload) {
+    this.location = payload
+    this.emit('change')
+  },
+
   getState() {
     return {
-      event   : this.event,
-      weather : this.weather,
-      buses   : this.buses
+      event    : this.event,
+      weather  : this.weather,
+      buses    : this.buses,
+      location : this.location
     }
   }
 })

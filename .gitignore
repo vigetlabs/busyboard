@@ -1,6 +1,4 @@
 .DS_Store
 node_modules
-old
-front-end/public
+server/cache
 npm-debug.log
-package.json.old

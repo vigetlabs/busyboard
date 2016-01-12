@@ -6,19 +6,12 @@ import myLocalIP from 'my-local-ip'
 export default function() {
   const config = clone(core)
 
-  config.module.loaders.push(
-    {
-      test: /\.sass$/,
-      loader: 'style-loader!css!autoprefixer!sass?indentedSyntax&imagePath=/assets/images'
-    }
-  )
-
   config.entry.app.unshift(
     `webpack-dev-server/client?http://${ myLocalIP() }:8001`,
     'webpack/hot/only-dev-server'
   )
 
-  config.output.filename = 'js/[name].js'
+  config.output.filename = 'js/[name]-development.js'
 
   config.plugins.unshift(
     new webpack.HotModuleReplacementPlugin()

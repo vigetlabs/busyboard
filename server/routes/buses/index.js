@@ -1,17 +1,12 @@
 import collect from './collect'
-import mock    from './mock'
+import demo    from './demo'
 import process from './process'
 
 export default {
   method : 'GET',
   path   : '/buses',
   handler(request, reply) {
-    if (request.query.mock) {
-      var data = mock()
-    } else {
-      var data = collect()
-    }
+    let data = request.query.demo ? demo() : collect()
     reply(process(data))
   }
 }
-

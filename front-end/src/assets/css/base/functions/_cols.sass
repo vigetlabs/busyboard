@@ -2,7 +2,7 @@
   $col: (($dimensions--width - $dimensions--gutter) / $dimensions--cols)
   $gutter: $dimensions--gutter / $dimensions--height;
 
-  $width: $count * $col
+  $width: ($count * $col) + 1
 
   @if ($take-right)
     $width: $width + $dimensions--gutter

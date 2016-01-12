@@ -1,5 +1,6 @@
-import Bus                   from './Bus'
-import Dot                   from './Dot'
+import Bus                    from './Bus'
+import Dot                    from './Dot'
+import Background             from './Background'
 import TimeoutTransitionGroup from '../../vendor/timeout-transition-group'
 
 export default React.createClass({
@@ -29,6 +30,7 @@ export default React.createClass({
       <div className="buses">
         <h2>
           That your bus?
+          <span dangerouslySetInnerHTML={{__html: require('../../../images/bus.svg') }} />
         </h2>
         <ul className="buses__list">
           <TimeoutTransitionGroup enterTimeout={5000}
@@ -38,12 +40,16 @@ export default React.createClass({
           </TimeoutTransitionGroup>
         </ul>
         <ul className="buses__map">
+          <li className="-here">
+            <span dangerouslySetInnerHTML={{__html: require('../../../images/here.svg') }} />
+          </li>
           <TimeoutTransitionGroup enterTimeout={5000}
                                   leaveTimeout={5000}
                                   transitionName=''>
             {this._getDots()}
           </TimeoutTransitionGroup>
         </ul>
+        <Background />
       </div>
     )
   }

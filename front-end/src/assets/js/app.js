@@ -8,7 +8,7 @@ import Logo       from './tiles/logo'
 import Buses      from './tiles/buses'
 import Weather    from './tiles/weather'
 import Event      from './tiles/event'
-import Locations  from './tiles/locations'
+import Location   from './tiles/location'
 
 poll()
 
@@ -26,7 +26,7 @@ const App = React.createClass({
         <Logo />
         <Buses buses={this.state.buses} />
         <Event {...this.state.event} />
-        <Locations />
+        <Location {...this.state.location} />
         <Weather {...this.state.weather} />
       </main>
     )

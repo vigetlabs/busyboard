@@ -9,5 +9,9 @@ export default {
 
   updateBuses(event) {
     this.dispatch('UPDATE_BUSES', event)
+  },
+
+  updateLocation(location) {
+    this.dispatch('UPDATE_LOCATION', location)
   }
 }

@@ -2,6 +2,11 @@ export default {
   path    : '/',
   method  : 'GET',
   handler(request, reply) {
-    reply.view('index')
+
+    if (process.env.NODE_ENV === 'development') {
+      reply.view('index-development')
+    } else {
+      reply.view('index-production')
+    }
   }
 }
