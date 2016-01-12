@@ -13,7 +13,7 @@
     "dev-notworking": "NODE_ENV=development forever --watchDirectory server server/index.js ",
     "dev": "NODE_ENV=development forever server/index.js",
     "build": "NODE_ENV=production node front-end/webpack/build.js",
-    "start": "NODE_ENV=development forever server/index.js"
+    "start": "forever server/index.js"
   },
   "dependencies": {
     "autoprefixer-loader": "1.2.0",
