@@ -1,9 +1,6 @@
 export default React.createClass({
   getScale() {
-    if (this.props.directionsDirection.length > 15)
-      return 'scale(0.5)'
-    else
-      return ''
+    return 'scale(0.65)'
   },
 
   getSizeClass() {
@@ -15,8 +12,8 @@ export default React.createClass({
 
   getHours() {
     return typeof this.props.closes === 'undefined'
-      ? `Is open until ${this.props.closes}`
-      : `Opens at ${this.props.opens}`
+      ? `Opens at ${this.props.opens}`
+      : `Is open until ${this.props.closes}`
   },
 
   render() {
@@ -30,7 +27,7 @@ export default React.createClass({
                 <b>{this.props.name}</b>
               </h2>
               <p className='location__closing-time'>
-                Is open until {this.props.closes}
+                {this.getHours()}
               </p>
             </div>
           </div>

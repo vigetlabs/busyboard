@@ -6,10 +6,10 @@ let currentIndex   = 0
 const dayOfTheWeek = (new Date()).getDay()
 
 const isOpen = location => {
-  const open  = moment(location.open[dayOfTheWeek],   'h:mma')
-  const close = moment(location.close[dayOfTheWeek], 'h:mma')
-  if (close < open) close.add(1, 'days')
-  return open < moment() && close > moment()
+  const open  = moment(location.open[dayOfTheWeek],  'h:mma').unix()
+  const close = moment(location.close[dayOfTheWeek], 'h:mma').unix()
+  if (close < open) moment(close).add(1, 'days').unix()
+  return open < moment() && close > moment().unix()
 }
 
 const openLocations = data.filter(location => {
@@ -18,7 +18,6 @@ const openLocations = data.filter(location => {
 
 openLocations.forEach(location => {
   location.closes = location.close[dayOfTheWeek]
-  location
 })
 
 const closedLocations = data.filter(location => {
@@ -27,7 +26,6 @@ const closedLocations = data.filter(location => {
 
 closedLocations.forEach(location => {
   location.opens = location.open[dayOfTheWeek]
-  location
 })
 
 const viewableData = clone((openLocations.length === 0) ? closedLocations : openLocations)

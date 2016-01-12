@@ -42,11 +42,11 @@
     "truncate": "1.0.4",
     "underscore": "1.8.3",
     "url-loader": "0.5.5",
-    "webpack": "1.8.0"
+    "webpack": "1.10.1"
   },
   "devDependencies": {
     "my-local-ip": "1.0.0",
     "react-hot-loader": "1.2.4",
-    "webpack-dev-server": "1.8.0"
+    "webpack-dev-server": "1.10.1"
   }
 }
