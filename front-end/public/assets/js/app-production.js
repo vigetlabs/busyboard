@@ -28339,6 +28339,9 @@
 	  },
 
 	  render: function render() {
+	    // temporarily removing canvas to check performance
+	    return React.createElement('div', null);
+
 	    return React.createElement('canvas', { width: this.props.size, height: this.props.size });
 	  }
 	});

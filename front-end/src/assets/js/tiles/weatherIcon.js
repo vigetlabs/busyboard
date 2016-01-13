@@ -23,6 +23,9 @@ export default React.createClass({
   },
 
   render() {
+    // temporarily removing canvas to check performance
+    return <div></div>
+
     return (
       <canvas width={this.props.size} height={this.props.size}></canvas>
     )
