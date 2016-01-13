@@ -28330,13 +28330,9 @@
 	    skycon.play();
 	  },
 
-	  componentDidMount: function componentDidMount() {
-	    this._updateIcon();
-	  },
+	  componentDidMount: function componentDidMount() {},
 
-	  componentDidUpdate: function componentDidUpdate() {
-	    this._updateIcon();
-	  },
+	  componentDidUpdate: function componentDidUpdate() {},
 
 	  render: function render() {
 	    // temporarily removing canvas to check performance
@@ -28346,6 +28342,10 @@
 	  }
 	});
 	module.exports = exports['default'];
+
+	// this._updateIcon()
+
+	// this._updateIcon()
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
