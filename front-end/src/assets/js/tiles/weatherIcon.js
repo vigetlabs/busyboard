@@ -15,11 +15,11 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    this._updateIcon()
+    // this._updateIcon()
   },
 
   componentDidUpdate() {
-    this._updateIcon()
+    // this._updateIcon()
   },
 
   render() {
