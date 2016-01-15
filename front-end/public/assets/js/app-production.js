@@ -28330,22 +28330,19 @@
 	    skycon.play();
 	  },
 
-	  componentDidMount: function componentDidMount() {},
+	  componentDidMount: function componentDidMount() {
+	    this._updateIcon();
+	  },
 
-	  componentDidUpdate: function componentDidUpdate() {},
+	  componentDidUpdate: function componentDidUpdate() {
+	    this._updateIcon();
+	  },
 
 	  render: function render() {
-	    // temporarily removing canvas to check performance
-	    return React.createElement('div', null);
-
 	    return React.createElement('canvas', { width: this.props.size, height: this.props.size });
 	  }
 	});
 	module.exports = exports['default'];
-
-	// this._updateIcon()
-
-	// this._updateIcon()
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },

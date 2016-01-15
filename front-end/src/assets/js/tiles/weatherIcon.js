@@ -15,17 +15,14 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    // this._updateIcon()
+    this._updateIcon()
   },
 
   componentDidUpdate() {
-    // this._updateIcon()
+    this._updateIcon()
   },
 
   render() {
-    // temporarily removing canvas to check performance
-    return <div></div>
-
     return (
       <canvas width={this.props.size} height={this.props.size}></canvas>
     )
