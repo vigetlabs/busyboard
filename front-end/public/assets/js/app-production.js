@@ -27207,6 +27207,11 @@
 
 	  _getLocation2['default']();
 	  setInterval(_getLocation2['default'], minutes(0.5));
+
+	  // necessary so canvas weather icon memory leak doesn't crash everything
+	  setTimeout(function () {
+	    return window.location.reload();
+	  }, minutes(15));
 	};
 
 	module.exports = exports['default'];

@@ -20,4 +20,7 @@ export default () => {
 
   getLocation()
   setInterval(getLocation, minutes(0.5))
+
+  // necessary so canvas weather icon memory leak doesn't crash everything
+  setTimeout(() => window.location.reload(), minutes(15))
 }
